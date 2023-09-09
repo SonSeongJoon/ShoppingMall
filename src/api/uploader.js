@@ -1,4 +1,4 @@
-export async function uploaderImage(file) {
+export async function uploader(file) {
    const data = new FormData();
    data.append('file', file);
    data.append('upload_preset', process.env.REACT_APP_CLOUDINARY_PRESET);
@@ -6,8 +6,6 @@ export async function uploaderImage(file) {
       method: 'POST',
       body: data,
    })
-      .then((res) => {
-         return res.json();
-      })
-      .then((data) => console.log(data.url));
+      .then((res) => res.json())
+      .then((data) => data.url);
 }
