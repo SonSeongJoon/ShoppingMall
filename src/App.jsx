@@ -1,19 +1,19 @@
-import {Outlet} from "react-router-dom";
-import {Header} from "./components/Header";
-import {Category} from "./components/Category";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-const queryClient = new QueryClient()
+import { Outlet } from 'react-router-dom';
+import { Header } from './components/Header';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { AuthContextProvider } from './context/AuthContext';
+
+const queryClient = new QueryClient();
 
 function App() {
-        return (
-            <div>
-                <Header/>
-                <QueryClientProvider client={queryClient}>
-                    <Category/>
-                    <Outlet/>
-                </QueryClientProvider>
+   return (
+      <AuthContextProvider>
+         <Header />
+         <QueryClientProvider client={queryClient}>
+            <Outlet />
+         </QueryClientProvider>
+      </AuthContextProvider>
+   );
+}
 
-            </div>
-        );
-    }
 export default App;
