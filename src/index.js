@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { NotFound } from './pages/NotFound';
-import { Clothes } from './pages/Clothes';
-import { ClothesDetail } from './pages/ClothesDetail';
+import { AllProducts } from './pages/AllProducts';
+import { ProductsDetail } from './pages/ProductsDetail';
 import { Home } from './components/Home';
 import { MyCart } from './components/MyCart';
 import { NewClothes } from './pages/NewClothes';
@@ -18,16 +18,16 @@ const router = createBrowserRouter([
       errorElement: <NotFound />,
       children: [
          { index: true, element: <Home /> },
-         { path: '/clothes', element: <Clothes /> },
+         { path: '/allproducts', element: <AllProducts /> },
          {
-            path: '/clothes/new',
+            path: '/products/new',
             element: (
                <ProtectedRoute requireAdmin={true}>
                   <NewClothes />
                </ProtectedRoute>
             ),
          },
-         { path: '/clothes/:id', element: <ClothesDetail /> },
+         { path: '/products/:id', element: <ProductsDetail /> },
          {
             path: '/carts',
             element: (

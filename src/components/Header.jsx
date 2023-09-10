@@ -13,12 +13,12 @@ export function Header() {
             <h1 className="text-4xl text-blue-600">Shoppy</h1>
          </Link>
          <nav className="flex gap-4 font-semibold text-medium items-center">
-            <Link to="/clothes">Clothes</Link>
+            <Link to="/allproducts">Clothes</Link>
             <Link to="/carts">
                <BsFillCartFill className="text-xl" />
             </Link>
             {user && user.isAdmin && (
-               <Link to="/clothes/new">
+               <Link to="/products/new">
                   <BsFillPencilFill className="text-xl" />
                </Link>
             )}

@@ -6,14 +6,14 @@ import { AuthContextProvider } from './context/AuthContext';
 const queryClient = new QueryClient();
 
 function App() {
-   return (
-      <AuthContextProvider>
-         <Header />
-         <QueryClientProvider client={queryClient}>
-            <Outlet />
-         </QueryClientProvider>
-      </AuthContextProvider>
-   );
+  return (
+    <AuthContextProvider>
+      <Header />
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+      </QueryClientProvider>
+    </AuthContextProvider>
+  );
 }
 
 export default App;
